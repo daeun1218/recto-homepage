@@ -337,6 +337,36 @@ export const womenProducts = [
     care: ['Dry clean only', 'Do not machine dry', 'Caution: friction may cause pilling', 'Avoid color bleeding and fading'],
   },
   { id: 7197, name: 'RC SIGNATURE FLARE PANTS', color: 'BLACK', price: 295000, currency: 'KRW', category: 'pants', imageUrl: 'https://recto.co/web/product/medium/202602/32332643957db055968548f4ed208b5f.jpg' },
+
+  // ── SHOES (cate_no=169) ──
+  { id: 7054, name: 'POPPY TOE SANDAL', color: 'OFF WHITE', price: 455000, currency: 'KRW', category: 'shoes', imageUrl: 'https://recto.co/web/product/medium/202603/4fe7d20e8efa7d4e0386286d51732091.jpg' },
+  { id: 7056, name: 'POPPY TOE SANDAL', color: 'BLACK', price: 455000, currency: 'KRW', category: 'shoes', imageUrl: 'https://recto.co/web/product/medium/202603/dc2f00ccf417724702526f715a73624c.jpg' },
+  { id: 7055, name: 'POPPY TOE SANDAL', color: 'BURGUNDY', price: 455000, currency: 'KRW', category: 'shoes', imageUrl: 'https://recto.co/web/product/medium/202603/782a7a92d1b3121507da785983cfad5e.jpg' },
+  { id: 7058, name: 'LAURA MULES', color: 'TANGERINE TANGO', price: 395000, currency: 'KRW', category: 'shoes', imageUrl: 'https://recto.co/web/product/medium/202603/7bb99b7a2104a096fe1918c2c3a5ee07.jpg' },
+  { id: 7057, name: 'LAURA MULES', color: 'TAN', price: 395000, currency: 'KRW', category: 'shoes', imageUrl: 'https://recto.co/web/product/medium/202603/d0d5c830fe0cd57832e05ddb27d6a321.jpg' },
+  { id: 7059, name: 'LAURA MULES', color: 'BLACK', price: 395000, currency: 'KRW', category: 'shoes', imageUrl: 'https://recto.co/web/product/medium/202603/51ad9f84e3656356590b56b60b2e5c0e.jpg' },
+  { id: 7061, name: 'STRAPY BUCKLE SANDAL', color: 'BLACK', price: 535000, currency: 'KRW', category: 'shoes', imageUrl: 'https://recto.co/web/product/medium/202603/bf549928da33d35812039749a9514856.jpg' },
+  { id: 7060, name: 'POINT TOE SUEDE DERBY SHOES', color: 'BLACK', price: 495000, currency: 'KRW', category: 'shoes', imageUrl: 'https://recto.co/web/product/medium/202603/638f1554a6589e9e021b5562fa5efe0b.jpg' },
+
+  // ── ACCESSORIES (cate_no=221, 공용) ──
+  { id: 7231, name: 'SIGNATURE WEAVING BELT', color: 'DARK CHOCOLATE', price: 235000, currency: 'KRW', category: 'accessories', imageUrl: 'https://recto.co/web/product/medium/202603/313aa86d7d64fd5b373f9147d978d462.jpg' },
+  { id: 7232, name: 'SIGNATURE WEAVING BELT', color: 'BLACK', price: 235000, currency: 'KRW', category: 'accessories', imageUrl: 'https://recto.co/web/product/medium/202603/55413f47c9c938b3853533eacc71ada8.jpg' },
+  { id: 7163, name: 'CONTRAST SIGNATURE SQUARE BUCKLE BELT', color: 'VINTAGE BROWN', price: 195000, currency: 'KRW', category: 'accessories', imageUrl: 'https://recto.co/web/product/medium/202603/2e51502116c434f705facd44feda9d88.jpg' },
+  { id: 7164, name: 'CONTRAST SIGNATURE SQUARE BUCKLE BELT', color: 'BLACK', price: 195000, currency: 'KRW', category: 'accessories', imageUrl: 'https://recto.co/web/product/medium/202603/336b85e00cdd68bc40e725cc009a9579.jpg' },
+  { id: 6557, name: 'SIGNATURE ROUND BUCKLE BELT', color: 'GOLD', price: 198000, currency: 'KRW', category: 'accessories', imageUrl: 'https://recto.co/web/product/medium/202503/ca0f1d5a94368ee58e2287b1651d6bfd.jpg' },
+  { id: 6556, name: 'SIGNATURE ROUND BUCKLE BELT', color: 'SILVER', price: 198000, currency: 'KRW', category: 'accessories', imageUrl: 'https://recto.co/web/product/medium/202503/04e7c73ae68b168cc88481b27a9eac77.jpg' },
+
+  // ── PREVIOUS SEASON (cate_no=301, 공용) ──
+  { id: 6894, name: 'SLIM FIT JERSEY SHIRT', color: 'BROWN', price: 235000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202510/21c6adc1c9365646324fc79a34d3cfef.jpg' },
+  { id: 6794, name: 'LEA STRIPE SHIRT', color: 'PALE BEIGE', price: 375000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/6230804dd80139350847e5f5944dfd8d.jpg' },
+  { id: 6790, name: 'VINTAGE PRESSED CREASE JUMPER', color: 'OLIVE', price: 595000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/6107bfab86a6c172dce5ca8469b1377c.jpg' },
+  { id: 6789, name: 'VINTAGE PRESSED CREASE JUMPER', color: 'BLACK', price: 595000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/96c07ae6348919a6c1cace2ed929873a.jpg' },
+  { id: 6895, name: 'SLIM FIT JERSEY SHIRT', color: 'MELANGE GREY', price: 235000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/22f4c5bbba1fbf6cf1dff6b85a19ae21.jpg' },
+  { id: 6791, name: 'POWDERY COTTON CLASSIC SHIRT', color: 'KHAKISH GREY', price: 335000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/3d76990ede86bbd012e869aa43fbaeaa.jpg' },
+  { id: 6809, name: 'RC SHEER SHORT SLEEVE KNIT TOP', color: 'BLACK', price: 295000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/4b0c21f940e64d45d87c54d1826e4fd7.jpg' },
+  { id: 6899, name: 'VINTAGE CIRCLE MOTIF SILK TIE SCARF', color: 'ORANGE', price: 135000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202510/62f30a759733077b412562f519fac8c7.jpg' },
+  { id: 6812, name: 'RC SHEER KNIT TOP', color: 'CREAM', price: 355000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/076ed7be98ad1cb3de35761b2c2156bd.jpg' },
+  { id: 6804, name: 'BACK LOGO V-NECK SWEATSHIRT', color: 'SEPIA', price: 245000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/0cc1e108aecabf8f340855d941ff0467.jpg' },
 ];
 
 // ─── 남성 상품 카테고리 ───

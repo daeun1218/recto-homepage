@@ -13,7 +13,7 @@ import styles from './ShopPage.module.css';
 
 const categoryMap = {
   women: {
-    all: womenProducts.filter((p) => p.category !== 'bags'),
+    all: womenProducts.filter((p) => !['bags', 'shoes', 'accessories', 'previous'].includes(p.category)),
     outerwear: womenProducts.filter((p) => p.category === 'outerwear'),
     jackets: womenProducts.filter((p) => p.category === 'jackets'),
     tops: womenProducts.filter((p) => p.category === 'tops'),
@@ -27,9 +27,12 @@ const categoryMap = {
     bags: [...singularBagProducts, ...bucketBagProducts],
     'singular-bag': singularBagProducts,
     'bucket-bag': bucketBagProducts,
+    shoes: womenProducts.filter((p) => p.category === 'shoes'),
+    accessories: womenProducts.filter((p) => p.category === 'accessories'),
+    previous: womenProducts.filter((p) => p.category === 'previous'),
   },
   men: {
-    all: menProducts,
+    all: menProducts.filter((p) => !['singular-bag', 'bucket-bag', 'shoes', 'accessories', 'previous'].includes(p.category)),
     outerwear: menProducts.filter((p) => p.category === 'outerwear'),
     jackets: menProducts.filter((p) => p.category === 'jackets'),
     tops: menProducts.filter((p) => p.category === 'tops'),
