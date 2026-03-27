@@ -24,13 +24,14 @@ function EyewearCard({ product }) {
 }
 
 function EyewearEditSection() {
+  const featured = eyewearProducts.slice(0, 3);
   const [activeIndex, setActiveIndex] = useState(0);
   const touchStartX = useRef(0);
 
   const onTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
   const onTouchEnd = (e) => {
     const diff = touchStartX.current - e.changedTouches[0].clientX;
-    if (diff > 50 && activeIndex < eyewearProducts.length - 1) setActiveIndex((i) => i + 1);
+    if (diff > 50 && activeIndex < featured.length - 1) setActiveIndex((i) => i + 1);
     if (diff < -50 && activeIndex > 0) setActiveIndex((i) => i - 1);
   };
 
@@ -43,7 +44,7 @@ function EyewearEditSection() {
 
       {/* Desktop grid */}
       <div className={styles.grid}>
-        {eyewearProducts.map((product) => (
+        {featured.map((product) => (
           <EyewearCard key={product.id} product={product} />
         ))}
       </div>
@@ -58,7 +59,7 @@ function EyewearEditSection() {
           className={styles.carouselTrack}
           style={{ transform: `translateX(calc(-${activeIndex} * 80%))` }}
         >
-          {eyewearProducts.map((product) => (
+          {featured.map((product) => (
             <Link key={product.id} to={`/product/${product.id}`} className={styles.carouselSlide}>
               <div className={styles.slideImageWrap} style={{ background: product.bg }}>
                 <img src={product.imageUrl} alt={product.name} className={styles.slideImage} />
@@ -72,7 +73,7 @@ function EyewearEditSection() {
           ))}
         </div>
         <div className={styles.dots}>
-          {eyewearProducts.map((_, i) => (
+          {featured.map((_, i) => (
             <span
               key={i}
               className={`${styles.dot} ${i === activeIndex ? styles.dotActive : ''}`}
