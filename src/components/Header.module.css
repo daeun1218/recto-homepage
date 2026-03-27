@@ -1,0 +1,211 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-bg);
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 48px;
+}
+
+.navLeft,
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  flex: 1;
+}
+
+.navRight {
+  justify-content: flex-end;
+}
+
+.navLink {
+  font-family: var(--font-en);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--color-text-primary);
+  transition: opacity 0.2s ease;
+}
+
+.navLink:hover {
+  opacity: 0.5;
+}
+
+.navLinkActive {
+  opacity: 0.5;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  padding: 0 48px;
+  transition: opacity 0.2s ease;
+}
+
+.logoImg {
+  height: 16px;
+  width: auto;
+  display: block;
+}
+
+.logo:hover {
+  opacity: 0.6;
+}
+
+/* Mobile only */
+.menuBtn,
+.mobileIcons {
+  display: none;
+}
+
+.menuBtn {
+  background: none;
+  border: none;
+  padding: 4px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  padding: 4px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+/* ── Mega Menu ── */
+.megaMenu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 48px;
+  background: var(--color-bg);
+  border-bottom: 0.5px solid var(--color-border);
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.25s ease,
+              visibility 0s 0.35s;
+}
+
+.megaOpen {
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.25s ease,
+              visibility 0s 0s;
+}
+
+.megaInner {
+  display: flex;
+  gap: 0;
+  padding: 40px 48px 48px;
+}
+
+.megaColumn {
+  flex: 1;
+  min-width: 0;
+}
+
+.megaGroupTitle {
+  display: block;
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--color-text-primary);
+  margin-bottom: 20px;
+}
+
+.megaList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.megaLink {
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--color-text-primary);
+  opacity: 0.65;
+  transition: opacity 0.2s ease;
+}
+
+.megaLink:hover {
+  opacity: 1;
+}
+
+/* Overlay behind mega menu */
+.megaOverlay {
+  position: fixed;
+  inset: 0;
+  top: 48px;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.25s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 16px;
+    height: 44px;
+  }
+
+  .navLeft,
+  .navRight {
+    display: none;
+  }
+
+  .menuBtn {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+
+  .logo {
+    padding: 0;
+    flex: 0 0 auto;
+  }
+
+  .logoImg {
+    height: 14px;
+  }
+
+  .mobileIcons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+    flex: 1;
+  }
+
+  .megaMenu,
+  .megaOverlay {
+    display: none;
+  }
+}

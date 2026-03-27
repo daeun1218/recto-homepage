@@ -1,0 +1,160 @@
+/* pages/CollectionPage.module.css */
+
+.page {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* ── 뒤로가기 ── */
+.backBtn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #999;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  transition: color 0.2s, background 0.2s;
+}
+
+.backBtn:hover {
+  color: #333;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* ── 왼쪽 히어로 ── */
+.heroPanel {
+  width: 38%; /* 52% → 38%로 축소 */
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  border-right: 0.5px solid #e0e0e0;
+}
+
+.heroImageWrap {
+  flex: 1;
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top; /* 상단 기준으로 크롭 — 얼굴 잘림 방지 */
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.heroMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-top: 0.5px solid #e0e0e0;
+}
+
+.heroLabel {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.heroIndex {
+  font-size: 11px;
+  color: #bbb;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── 오른쪽 그리드 ── */
+.gridPanel {
+  flex: 1; /* 나머지 62% 차지 */
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.gridPanel::-webkit-scrollbar {
+  width: 3px;
+}
+
+.gridPanel::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 2px;
+}
+
+.gridTitle {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #999;
+  margin: 0 0 14px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 3열 → 4열 */
+  gap: 6px;
+}
+
+.thumb {
+  all: unset;
+  cursor: pointer;
+  display: block;
+  aspect-ratio: 2 / 3;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1.5px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.thumb:hover {
+  border-color: #ccc;
+}
+
+.thumbActive {
+  border-color: #111 !important;
+}
+
+.thumbImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+/* ── 모바일 ── */
+@media (max-width: 768px) {
+  .page {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+
+  .heroPanel {
+    width: 100%;
+    height: 70vh;
+    border-right: none;
+    border-bottom: 0.5px solid #e0e0e0;
+  }
+
+  .gridPanel {
+    overflow-y: visible;
+    padding: 12px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+}
