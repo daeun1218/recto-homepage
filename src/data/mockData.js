@@ -49,7 +49,7 @@ export const banners = [
     img: banner3,
     mobileImg: bannerMo3,
     viewStyle: 'box',
-    viewLink: '#!',
+    viewLink: '/collab/effector',
     externalLink: true,
   },
 ];
@@ -1841,6 +1841,72 @@ export const eyewearProducts = [
     },
     sizes: [
       { size: 'OS', lensWidth: 55, bridge: 19, templeLength: 150 },
+    ],
+    origin: 'Made in Japan',
+    warranty: '6 months from purchase date',
+  },
+  {
+    id: 6593,
+    name: 'EFFECTOR X RECTO BESSETTE',
+    color: 'BLACK/CLEAR',
+    code: 'RU25SAAC003BK',
+    price: 568000,
+    currency: 'KRW',
+    bg: '#dddad3',
+    imageUrl: 'https://recto.co/web/product/medium/202504/26817d8c335351d546b70fbf1222a730.jpg',
+    description:
+      'Elegant silhouette with bold frame design. Handcrafted Japanese eyewear balancing classical structure with modern sensibility. Clear UV400 lenses with 99.9% UV blocking.',
+    material: {
+      front: '100% Acetate',
+      lens: 'Plastic CR-39',
+      temples: '100% Acetate',
+    },
+    sizes: [
+      { size: 'OS', lensWidth: 53, bridge: 19, templeLength: 150 },
+    ],
+    origin: 'Made in Japan',
+    warranty: '6 months from purchase date',
+  },
+  {
+    id: 6594,
+    name: 'EFFECTOR X RECTO BESSETTE',
+    color: 'BLACK/DARK GREY',
+    code: 'RU25SAAC003DG',
+    price: 568000,
+    currency: 'KRW',
+    bg: '#d8d5ce',
+    imageUrl: 'https://recto.co/web/product/medium/202504/51a50df9c6c77485cc0f8ae5912e60ab.jpg',
+    description:
+      'Elegant silhouette with bold frame design. Dark Grey UV400 tinted lenses with 99.9% UV blocking. Handcrafted in Japan with meticulous acetate detailing.',
+    material: {
+      front: '100% Acetate',
+      lens: 'Plastic CR-39',
+      temples: '100% Acetate',
+    },
+    sizes: [
+      { size: 'OS', lensWidth: 53, bridge: 19, templeLength: 150 },
+    ],
+    origin: 'Made in Japan',
+    warranty: '6 months from purchase date',
+  },
+  {
+    id: 6595,
+    name: 'EFFECTOR X RECTO BESSETTE',
+    color: 'BROWN',
+    code: 'RU25SAAC003BR',
+    price: 568000,
+    currency: 'KRW',
+    bg: '#e0dbd2',
+    imageUrl: 'https://recto.co/web/product/medium/202504/6c7e492e0825bea68c4eb2c6174cf9ac.jpg',
+    description:
+      'Elegant silhouette with bold frame design. Brown UV400 lenses with 99.9% UV blocking. Handcrafted Japanese acetate eyewear creating quiet presence.',
+    material: {
+      front: '100% Acetate',
+      lens: 'Plastic CR-39',
+      temples: '100% Acetate',
+    },
+    sizes: [
+      { size: 'OS', lensWidth: 53, bridge: 19, templeLength: 150 },
     ],
     origin: 'Made in Japan',
     warranty: '6 months from purchase date',

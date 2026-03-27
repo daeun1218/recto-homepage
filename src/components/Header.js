@@ -75,24 +75,40 @@ const megaMenuData = {
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMega, setActiveMega] = useState(null);
+  const [mobileAccordion, setMobileAccordion] = useState(null);
   const headerRef = useRef(null);
   const location = useLocation();
   const { cartCount } = useCart();
 
   const navLeft = [
+    { label: 'EFFECTOR × RECTO', key: 'effector', link: '/collab/effector', bold: true },
     { label: 'WOMEN', key: 'women' },
     { label: 'MEN', key: 'men' },
-    { label: 'ABOUT', key: 'about' },
     { label: 'COLLECTIONS', key: 'collections' },
   ];
-  const navRight = ['SEARCH'];
+  const navRight = [{ label: 'ABOUT', key: 'about' }, 'SEARCH'];
 
   const closeMega = useCallback(() => setActiveMega(null), []);
+  const closeMenu = useCallback(() => {
+    setMenuOpen(false);
+    setMobileAccordion(null);
+  }, []);
 
   // Close on route change
   useEffect(() => {
     closeMega();
-  }, [location, closeMega]);
+    closeMenu();
+  }, [location, closeMega, closeMenu]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
 
   // Close on click outside
   useEffect(() => {
@@ -108,19 +124,26 @@ function Header() {
 
   // Close on Escape
   useEffect(() => {
-    if (!activeMega) return;
+    if (!activeMega && !menuOpen) return;
     const handleKey = (e) => {
-      if (e.key === 'Escape') closeMega();
+      if (e.key === 'Escape') {
+        closeMega();
+        closeMenu();
+      }
     };
     document.addEventListener('keydown', handleKey);
     return () => document.removeEventListener('keydown', handleKey);
-  }, [activeMega, closeMega]);
+  }, [activeMega, menuOpen, closeMega, closeMenu]);
 
   const handleNavClick = (key, e) => {
     if (megaMenuData[key]) {
       e.preventDefault();
       setActiveMega((prev) => (prev === key ? null : key));
     }
+  };
+
+  const toggleMobileAccordion = (key) => {
+    setMobileAccordion((prev) => (prev === key ? null : key));
   };
 
   const currentMenu = activeMega ? megaMenuData[activeMega] : null;
@@ -132,13 +155,22 @@ function Header() {
         <ul className={styles.navLeft}>
           {navLeft.map((item) => (
             <li key={item.key}>
-              <a
-                href="#!"
-                className={`${styles.navLink} ${activeMega === item.key ? styles.navLinkActive : ''}`}
-                onClick={(e) => handleNavClick(item.key, e)}
-              >
-                {item.label}
-              </a>
+              {item.link ? (
+                <Link
+                  to={item.link}
+                  className={`${styles.navLink} ${item.bold ? styles.navLinkBold : ''}`}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  href="#!"
+                  className={`${styles.navLink} ${activeMega === item.key ? styles.navLinkActive : ''}`}
+                  onClick={(e) => handleNavClick(item.key, e)}
+                >
+                  {item.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -146,14 +178,21 @@ function Header() {
         {/* Mobile hamburger */}
         <button
           className={styles.menuBtn}
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => menuOpen ? closeMenu() : setMenuOpen(true)}
           aria-label="Menu"
         >
-          <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
-            <line y1="0.5" x2="18" y2="0.5" stroke="currentColor" />
-            <line y1="5.5" x2="18" y2="5.5" stroke="currentColor" />
-            <line y1="10.5" x2="18" y2="10.5" stroke="currentColor" />
-          </svg>
+          {menuOpen ? (
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <line x1="1" y1="1" x2="15" y2="15" stroke="currentColor" strokeWidth="1" />
+              <line x1="15" y1="1" x2="1" y2="15" stroke="currentColor" strokeWidth="1" />
+            </svg>
+          ) : (
+            <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+              <line y1="0.5" x2="18" y2="0.5" stroke="currentColor" />
+              <line y1="5.5" x2="18" y2="5.5" stroke="currentColor" />
+              <line y1="10.5" x2="18" y2="10.5" stroke="currentColor" />
+            </svg>
+          )}
         </button>
 
         <Link
@@ -162,6 +201,7 @@ function Header() {
           onClick={() => {
             window.scrollTo({ top: 0 });
             document.querySelector('[class*="wrapper"]')?.scrollTo({ top: 0 });
+            sessionStorage.removeItem('homeSectionIdx');
           }}
         >
           <img src={logo} alt="RECTO" className={styles.logoImg} />
@@ -169,13 +209,23 @@ function Header() {
 
         {/* Desktop nav right */}
         <ul className={styles.navRight}>
-          {navRight.map((item) => (
-            <li key={item}>
-              <a href="#!" className={styles.navLink}>
-                {item}
-              </a>
-            </li>
-          ))}
+          {navRight.map((item) =>
+            typeof item === 'object' ? (
+              <li key={item.key}>
+                <a
+                  href="#!"
+                  className={`${styles.navLink} ${activeMega === item.key ? styles.navLinkActive : ''}`}
+                  onClick={(e) => handleNavClick(item.key, e)}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ) : (
+              <li key={item}>
+                <a href="#!" className={styles.navLink}>{item}</a>
+              </li>
+            )
+          )}
           <li>
             <Link to="/cart" className={styles.navLink}>
               CART{cartCount > 0 && `(${cartCount})`}
@@ -187,7 +237,10 @@ function Header() {
         </ul>
 
         {/* Mobile icons */}
-        <div className={styles.mobileIcons}>
+        <div className={`${styles.mobileIcons} ${menuOpen ? styles.mobileIconsHidden : ''}`}>
+          <Link to="/cart" className={styles.mobileCartLink}>
+            CART{cartCount > 0 && `(${cartCount})`}
+          </Link>
           <button className={styles.iconBtn} aria-label="Search">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <circle
@@ -202,16 +255,6 @@ function Header() {
                 y1="10.5"
                 x2="15"
                 y2="15"
-                stroke="currentColor"
-                strokeWidth="1"
-              />
-            </svg>
-          </button>
-          <button className={styles.iconBtn} aria-label="Cart">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 4L4 14H12L13 4" stroke="currentColor" strokeWidth="1" />
-              <path
-                d="M5.5 4V3C5.5 1.5 6.5 0.5 8 0.5C9.5 0.5 10.5 1.5 10.5 3V4"
                 stroke="currentColor"
                 strokeWidth="1"
               />
@@ -248,6 +291,67 @@ function Header() {
 
       {/* Overlay */}
       {activeMega && <div className={styles.megaOverlay} onClick={closeMega} />}
+
+      {/* Mobile Drawer */}
+      <div className={`${styles.mobileDrawer} ${menuOpen ? styles.drawerOpen : ''}`}>
+        <div className={styles.drawerBody}>
+          {navLeft.map((item) => (
+            <div key={item.key} className={styles.drawerSection}>
+              {item.link ? (
+                <Link
+                  to={item.link}
+                  className={`${styles.drawerAccordionBtn} ${item.bold ? styles.drawerLinkBold : ''}`}
+                  onClick={closeMenu}
+                >
+                  <span>{item.label}</span>
+                </Link>
+              ) : (
+                <>
+                  <button
+                    className={styles.drawerAccordionBtn}
+                    onClick={() => toggleMobileAccordion(item.key)}
+                  >
+                    <span>{item.label}</span>
+                    <span className={styles.drawerAccordionIcon}>
+                      {mobileAccordion === item.key ? '−' : '+'}
+                    </span>
+                  </button>
+                  {mobileAccordion === item.key && megaMenuData[item.key] && (
+                    <div className={styles.drawerAccordionBody}>
+                      {Object.entries(megaMenuData[item.key]).map(([group, items]) => (
+                        <div key={group} className={styles.drawerGroup}>
+                          <span className={styles.drawerGroupTitle}>{group}</span>
+                          <ul className={styles.drawerList}>
+                            {items.map((link) => (
+                              <li key={link.name}>
+                                <Link
+                                  to={link.link}
+                                  className={styles.drawerLink}
+                                  onClick={closeMenu}
+                                >
+                                  {link.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className={styles.drawerFooter}>
+          <a href="#!" className={styles.drawerFooterLink}>SEARCH</a>
+          <Link to="/cart" className={styles.drawerFooterLink} onClick={closeMenu}>
+            CART{cartCount > 0 && ` (${cartCount})`}
+          </Link>
+          <a href="#!" className={styles.drawerFooterLink}>MY PAGE</a>
+        </div>
+      </div>
     </header>
   );
 }

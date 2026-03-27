@@ -92,6 +92,37 @@ const productImages = {
     'https://recto.co/web/product/extra/big/202504/014eda307da16ffb7b201c7c463b4cc5.jpg',
     'https://recto.co/web/product/extra/big/202504/41d10b995229c91e528472434479ad84.jpg',
   ],
+  // ── BESSETTE ──
+  6593: [
+    'https://recto.co/web/product/big/202504/3df86ffd60ff4ea1a6b312f2a094c662.jpg',
+    'https://recto.co/web/product/extra/big/202504/7947545e130a885d98e64625e2b4b03e.jpg',
+    'https://recto.co/web/product/extra/big/202504/2746d86290e9d6981f422bbdf6a3456f.jpg',
+    'https://recto.co/web/product/extra/big/202504/cb4f9fe9604ef035bbe488ccfbe041b2.jpg',
+    'https://recto.co/web/product/extra/big/202504/8525357c279cabca8d116167a3ff33c7.jpg',
+    'https://recto.co/web/product/extra/big/202504/dabb859c75ec869b3ebe03299ad268ca.jpg',
+    'https://recto.co/web/product/extra/big/202504/014eda307da16ffb7b201c7c463b4cc5.jpg',
+    'https://recto.co/web/product/extra/big/202504/713b3d4a0a72d78107de0ba20cd0b8eb.jpg',
+  ],
+  6594: [
+    'https://recto.co/web/product/big/202504/b3e86d33971976582e238fc0c150befb.jpg',
+    'https://recto.co/web/product/extra/big/202504/c97a3167a823f33754bd556dcbaaec9e.jpg',
+    'https://recto.co/web/product/extra/big/202504/64aa4453637c6f320b8bd986a51f38d4.jpg',
+    'https://recto.co/web/product/extra/big/202504/98b2c6c8979af0ebd948eb798fc7fec4.jpg',
+    'https://recto.co/web/product/extra/big/202504/924fecc7705ae8d24dafd1b6444b9277.jpg',
+    'https://recto.co/web/product/extra/big/202504/dabb859c75ec869b3ebe03299ad268ca.jpg',
+    'https://recto.co/web/product/extra/big/202504/014eda307da16ffb7b201c7c463b4cc5.jpg',
+    'https://recto.co/web/product/extra/big/202504/cab88a5e8fc0f40c700584cc7f69cc46.jpg',
+  ],
+  6595: [
+    'https://recto.co/web/product/big/202504/7f2de2342b94ba01a0e9813b923d76a7.jpg',
+    'https://recto.co/web/product/extra/big/202504/6954ba93f833a31d88c97fb593f3435c.jpg',
+    'https://recto.co/web/product/extra/big/202504/eb179e93050aa64b537514a9af8282f1.jpg',
+    'https://recto.co/web/product/extra/big/202504/05e3a64dd57a9ae214b5a1e7fdb3d721.jpg',
+    'https://recto.co/web/product/extra/big/202504/8e4f0bfc7571a8fdb656ae7d8e0c2e3d.jpg',
+    'https://recto.co/web/product/extra/big/202504/dabb859c75ec869b3ebe03299ad268ca.jpg',
+    'https://recto.co/web/product/extra/big/202504/014eda307da16ffb7b201c7c463b4cc5.jpg',
+    'https://recto.co/web/product/extra/big/202504/45df3c2a944b074271294d3066a40255.jpg',
+  ],
 
   // ── OUTERWEAR ──
   6941: [

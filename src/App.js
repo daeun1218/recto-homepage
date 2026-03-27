@@ -11,6 +11,7 @@ import CollectionPage from './pages/CollectionPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import CartPage from './pages/CartPage';
 import ShopPage from './pages/ShopPage';
+import CollabPage from './pages/CollabPage';
 import { banners, homeWomenProducts, homeMenProducts } from './data/mockData';
 
 function HomePage() {
@@ -104,6 +105,7 @@ function App() {
         <Route path="/collection/:id" element={<CollectionPage />} />
         <Route path="/product/:id" element={<ProductDetailPage />} />
       <Route path="/shop/:gender" element={<ShopPage />} />
+      <Route path="/collab/effector" element={<CollabPage />} />
       <Route path="/cart" element={<CartPage />} />
       </Routes>
     </CartProvider>

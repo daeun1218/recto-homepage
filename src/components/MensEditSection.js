@@ -38,7 +38,7 @@ function MensEditSection({ products }) {
     <section className={styles.section}>
       <div className={styles.sectionHeader}>
         <h2 className={styles.sectionTitle}>THE EDIT</h2>
-        <a href="#!" className={styles.viewAll}>view all</a>
+        <Link to="/shop/men" className={styles.viewAll}>view all</Link>
       </div>
 
       {/* Desktop grid */}

@@ -73,7 +73,12 @@ export default function CollectionPage() {
               <button
                 key={item.id}
                 className={`${styles.thumb} ${index === activeIndex ? styles.thumbActive : ''}`}
-                onClick={() => setActiveIndex(index)}
+                onClick={() => {
+                  setActiveIndex(index);
+                  if (window.innerWidth <= 768) {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
               >
                 <img
                   src={item.src}

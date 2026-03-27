@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import CartPopup from '../components/CartPopup';
 import { useCart } from '../context/CartContext';
@@ -10,6 +10,7 @@ import styles from './ProductDetailPage.module.css';
 
 export default function ProductDetailPage() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const product = allProducts.find((p) => p.id === Number(id));
 
   const [activeImg, setActiveImg] = useState(0);
@@ -92,6 +93,7 @@ export default function ProductDetailPage() {
   return (
     <div className={styles.wrapper}>
       <Header />
+      <button className={styles.backBtn} onClick={() => navigate(-1)} aria-label="Back">←</button>
       <div className={styles.page}>
         <div className={styles.productSection}>
           {/* ── 왼쪽: 썸네일 ── */}
