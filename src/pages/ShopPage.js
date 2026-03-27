@@ -132,7 +132,11 @@ export default function ShopPage() {
 
   const pageTitle = gender === 'women' ? 'WOMEN' : 'MEN';
   const categoryTitle = category ? categoryLabels[category] || category.toUpperCase() : 'ALL';
-  const sidebar = sideCategories[gender] || [];
+  const allSections = sideCategories[gender] || [];
+  const activeSection = category
+    ? allSections.find((s) => s.items.some((i) => i.key === category))
+    : allSections[0];
+  const sidebar = activeSection ? [activeSection] : allSections.slice(0, 1);
 
   return (
     <div className={styles.wrapper} ref={wrapperRef}>
