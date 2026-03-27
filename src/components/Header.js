@@ -13,8 +13,8 @@ const megaMenuData = {
   },
   collections: {
     COLLECTIONS: [
-      { name: 'WOMEN SPRING SUMMER 2026', link: '/shop/women-ss26' },
-      { name: 'MEN SPRING SUMMER 2026', link: '/shop/men-ss26' },
+      { name: 'WOMEN SPRING SUMMER 2026', link: '/collection/women' },
+      { name: 'MEN SPRING SUMMER 2026', link: '/collection/men' },
     ],
     CAMPAIGNS: [
       { name: 'SPRING SUMMER 2026', link: '/campaign/ss26' },
