@@ -6,12 +6,14 @@ import {
   signatureLeatherProducts,
   essentialProducts,
   menProducts,
+  singularBagProducts,
+  bucketBagProducts,
 } from '../data/mockData';
 import styles from './ShopPage.module.css';
 
 const categoryMap = {
   women: {
-    all: womenProducts,
+    all: womenProducts.filter((p) => p.category !== 'bags'),
     outerwear: womenProducts.filter((p) => p.category === 'outerwear'),
     jackets: womenProducts.filter((p) => p.category === 'jackets'),
     tops: womenProducts.filter((p) => p.category === 'tops'),
@@ -22,6 +24,9 @@ const categoryMap = {
     pants: womenProducts.filter((p) => p.category === 'pants'),
     'signature-leather': signatureLeatherProducts,
     essential: essentialProducts,
+    bags: [...singularBagProducts, ...bucketBagProducts],
+    'singular-bag': singularBagProducts,
+    'bucket-bag': bucketBagProducts,
   },
   men: {
     all: menProducts,
@@ -48,6 +53,8 @@ const categoryLabels = {
   'signature-leather': 'SIGNATURE LEATHER',
   essential: 'ESSENTIAL',
   bags: 'BAG',
+  'singular-bag': 'SINGULAR BAG',
+  'bucket-bag': '21 LEATHER BUCKET BAG',
   shoes: 'SHOES',
   accessories: 'ACCESSORIES',
 };

@@ -38,11 +38,8 @@ const megaMenuData = {
       { name: 'ALL', link: '/shop/women' },
     ],
     BAG: [
-      { name: 'SINGULAR BAG', link: '/shop/women?category=bags&sub=singular' },
-      {
-        name: '21 LEATHER BUCKET BAG',
-        link: '/shop/women?category=bags&sub=bucket',
-      },
+      { name: 'SINGULAR BAG', link: '/shop/women?category=singular-bag' },
+      { name: '21 LEATHER BUCKET BAG', link: '/shop/women?category=bucket-bag' },
       { name: 'ALL', link: '/shop/women?category=bags' },
     ],
     SHOES: [{ name: 'ALL', link: '/shop/women?category=shoes' }],
@@ -65,11 +62,8 @@ const megaMenuData = {
       { name: 'ALL', link: '/shop/men' },
     ],
     BAG: [
-      { name: 'SINGULAR BAG', link: '/shop/men?category=bags&sub=singular' },
-      {
-        name: '21 LEATHER BUCKET BAG',
-        link: '/shop/men?category=bags&sub=bucket',
-      },
+      { name: 'SINGULAR BAG', link: '/shop/men?category=singular-bag' },
+      { name: '21 LEATHER BUCKET BAG', link: '/shop/men?category=bucket-bag' },
       { name: 'ALL', link: '/shop/men?category=bags' },
     ],
     SHOES: [{ name: 'ALL', link: '/shop/men?category=shoes' }],
