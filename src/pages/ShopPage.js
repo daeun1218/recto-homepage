@@ -3,11 +3,9 @@ import { useParams, useSearchParams, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import {
   womenProducts,
-  womenCategories,
   signatureLeatherProducts,
   essentialProducts,
   menProducts,
-  menCategories,
 } from '../data/mockData';
 import styles from './ShopPage.module.css';
 
