@@ -137,8 +137,17 @@
   letter-spacing: 0.5px;
 }
 
+.sizeWarning {
+  font-size: 11px;
+  font-weight: 400;
+  color: #e53535;
+  letter-spacing: 0;
+  padding-left: 10px;
+}
+
 .sizeButtons {
   display: flex;
+  align-items: center;
   gap: 6px;
 }
 

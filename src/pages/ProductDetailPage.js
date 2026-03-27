@@ -17,6 +17,7 @@ export default function ProductDetailPage() {
   const [quantity, setQuantity] = useState(0);
   const [openAccordion, setOpenAccordion] = useState(null);
   const [cartItem, setCartItem] = useState(null);
+  const [sizeWarning, setSizeWarning] = useState(false);
   const { addToCart } = useCart();
 
   // 상품 변경 시 상태 초기화 & 스크롤 맨 위로
@@ -53,6 +54,7 @@ export default function ProductDetailPage() {
   const totalQty = selectedSize ? Math.max(quantity, 1) : 0;
 
   const handleSizeClick = (size) => {
+    setSizeWarning(false);
     if (selectedSize === size) {
       setSelectedSize(null);
       setQuantity(0);
@@ -60,6 +62,14 @@ export default function ProductDetailPage() {
       setSelectedSize(size);
       setQuantity(1);
     }
+  };
+
+  const requireSize = () => {
+    if (!selectedSize && sizeOptions.length > 0) {
+      setSizeWarning(true);
+      return true;
+    }
+    return false;
   };
 
   const toggleAccordion = (key) => {
@@ -134,6 +144,7 @@ export default function ProductDetailPage() {
                       {size === 'OS' ? 'F' : size}
                     </button>
                   ))}
+                  {sizeWarning && <span className={styles.sizeWarning}>사이즈를 먼저 정해주세요.</span>}
                 </div>
               </div>
             )}
@@ -147,13 +158,13 @@ export default function ProductDetailPage() {
               </span>
             </div>
 
-            <button className={styles.buyBtn}>BUY IT NOW</button>
+            <button className={styles.buyBtn} onClick={() => requireSize()}>BUY IT NOW</button>
 
             <div className={styles.subButtons}>
               <button
                 className={styles.cartBtn}
                 onClick={() => {
-                  if (!selectedSize) return;
+                  if (requireSize()) return;
                   const item = {
                     name: `${product.name} - ${product.color}`,
                     size: selectedSize === 'OS' ? 'F' : selectedSize,
