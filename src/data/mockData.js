@@ -1103,6 +1103,46 @@ export const menProducts = [
     origin: 'Made in Korea',
     care: ['Avoid direct sunlight, moisture, and high temperatures', 'Gently wipe soiled areas with a soft cloth'],
   },
+
+  // ── SHOES (cate_no=270) ──
+  { id: 7166, name: 'STRAPY BUCKLE SANDAL', color: 'BLACK', price: 535000, currency: 'KRW', category: 'shoes', imageUrl: 'https://recto.co/web/product/medium/202603/39d3bdc36c0c2977579ce3c43303f894.jpg' },
+  { id: 7165, name: 'HIGH NECK POINTED TOE BOOTS', color: 'BLACK', price: 595000, currency: 'KRW', category: 'shoes', imageUrl: 'https://recto.co/web/product/medium/202603/465dedca9da3827f3365a0da61496567.jpg' },
+
+  // ── ACCESSORIES (cate_no=221) ──
+  { id: 7231, name: 'SIGNATURE WEAVING BELT', color: 'DARK CHOCOLATE', price: 235000, currency: 'KRW', category: 'accessories', imageUrl: 'https://recto.co/web/product/medium/202603/313aa86d7d64fd5b373f9147d978d462.jpg' },
+  { id: 7232, name: 'SIGNATURE WEAVING BELT', color: 'BLACK', price: 235000, currency: 'KRW', category: 'accessories', imageUrl: 'https://recto.co/web/product/medium/202603/55413f47c9c938b3853533eacc71ada8.jpg' },
+  { id: 7163, name: 'CONTRAST SIGNATURE SQUARE BUCKLE BELT', color: 'VINTAGE BROWN', price: 195000, currency: 'KRW', category: 'accessories', imageUrl: 'https://recto.co/web/product/medium/202603/2e51502116c434f705facd44feda9d88.jpg' },
+  { id: 7164, name: 'CONTRAST SIGNATURE SQUARE BUCKLE BELT', color: 'BLACK', price: 195000, currency: 'KRW', category: 'accessories', imageUrl: 'https://recto.co/web/product/medium/202603/336b85e00cdd68bc40e725cc009a9579.jpg' },
+  { id: 6557, name: 'SIGNATURE ROUND BUCKLE BELT', color: 'GOLD', price: 198000, currency: 'KRW', category: 'accessories', imageUrl: 'https://recto.co/web/product/medium/202503/ca0f1d5a94368ee58e2287b1651d6bfd.jpg' },
+  { id: 6556, name: 'SIGNATURE ROUND BUCKLE BELT', color: 'SILVER', price: 198000, currency: 'KRW', category: 'accessories', imageUrl: 'https://recto.co/web/product/medium/202503/04e7c73ae68b168cc88481b27a9eac77.jpg' },
+
+  // ── PREVIOUS SEASON (cate_no=301) ──
+  { id: 6894, name: 'SLIM FIT JERSEY SHIRT', color: 'BROWN', price: 235000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202510/21c6adc1c9365646324fc79a34d3cfef.jpg' },
+  { id: 6794, name: 'LEA STRIPE SHIRT', color: 'PALE BEIGE', price: 375000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/6230804dd80139350847e5f5944dfd8d.jpg' },
+  { id: 6790, name: 'VINTAGE PRESSED CREASE JUMPER', color: 'OLIVE', price: 595000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/6107bfab86a6c172dce5ca8469b1377c.jpg' },
+  { id: 6789, name: 'VINTAGE PRESSED CREASE JUMPER', color: 'BLACK', price: 595000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/96c07ae6348919a6c1cace2ed929873a.jpg' },
+  { id: 6895, name: 'SLIM FIT JERSEY SHIRT', color: 'MELANGE GREY', price: 235000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/22f4c5bbba1fbf6cf1dff6b85a19ae21.jpg' },
+  { id: 6791, name: 'POWDERY COTTON CLASSIC SHIRT', color: 'KHAKISH GREY', price: 335000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/3d76990ede86bbd012e869aa43fbaeaa.jpg' },
+  { id: 6809, name: 'RC SHEER SHORT SLEEVE KNIT TOP', color: 'BLACK', price: 295000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/4b0c21f940e64d45d87c54d1826e4fd7.jpg' },
+  { id: 6899, name: 'VINTAGE CIRCLE MOTIF SILK TIE SCARF', color: 'ORANGE', price: 135000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202510/62f30a759733077b412562f519fac8c7.jpg' },
+  { id: 6812, name: 'RC SHEER KNIT TOP', color: 'CREAM', price: 355000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/076ed7be98ad1cb3de35761b2c2156bd.jpg' },
+  { id: 6804, name: 'BACK LOGO V-NECK SWEATSHIRT', color: 'SEPIA', price: 245000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/0cc1e108aecabf8f340855d941ff0467.jpg' },
+  { id: 6795, name: 'LEA STRIPE SHIRT', color: 'RED BROWN', price: 375000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/acbeb1d458157d924667c46a632292cb.jpg' },
+  { id: 6774, name: 'SLEEVE CREASE STRIPE SINGLE COAT', color: 'SEPIA', price: 795000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/37f83b05e8afa2c05bda381a5a02bb6f.jpg' },
+  { id: 6796, name: 'WOOL TWEED SOFT SHIRT', color: 'BEIGE', price: 435000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/ac024c37b1e81b9a5e289d3fc861461d.jpg' },
+  { id: 6868, name: 'FLARE DENIM PANTS', color: 'BLACK', price: 335000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/7e1847309196330be6b38e1660c3dce7.jpg' },
+  { id: 6830, name: 'STYRENE TUCK SUIT PANTS', color: 'CHARCOAL GREY', price: 395000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/85925b6b1d96e834827f49a0a4f88dd7.jpg' },
+  { id: 6891, name: 'DIEGO HEAVY COTTON COAT', color: 'STONE GREY', price: 795000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/ab6d9e146d9b9da1e199d28f17b4f49d.jpg' },
+  { id: 6892, name: 'REGLAN SLEEVES COTTON JUMPER', color: 'LIGHT TAUPE', price: 655000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/cb963aea5d1bde65aae5e7d6a2ff2617.jpg' },
+  { id: 6780, name: 'STRUCTURED SINGLE SUIT JACKET', color: 'MIDNIGHT GREY', price: 735000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/9558a3638cafc0671712e480f3385602.jpg' },
+  { id: 6900, name: 'VINTAGE JACQUARD SHIRT', color: 'KHAKI', price: 335000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202510/0c1ffd0e554b3aff856db5a074fb7ae7.jpg' },
+  { id: 6797, name: 'WOOL TWEED SOFT SHIRT', color: 'BLACK', price: 435000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/b1cc90bcded2adef8b61ed5caf2badca.jpg' },
+  { id: 6793, name: 'POWDERY COTTON CLASSIC SHIRT', color: 'RUST PINK', price: 335000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/28df25c6d2e92334b1d74dcb7280c77b.jpg' },
+  { id: 6817, name: 'CONTRAST LAYERED V-NECK KNIT TOP', color: 'RED', price: 335000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/8bb25048166daf30b52aa58e45d8ba30.jpg' },
+  { id: 6810, name: 'RC SHEER SHORT SLEEVE KNIT TOP', color: 'SCARLET RED', price: 295000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/9d3b44af91ab513dcca8822c623c7c73.jpg' },
+  { id: 6818, name: 'CANDY BOUCLE KNIT TOP', color: 'BLACK', price: 295000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/eff084ae037e3c124612c2d6e6e50899.jpg' },
+  { id: 6864, name: 'SLIM FIT BALACLAVA KNIT TOP', color: 'BLACK', price: 395000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/a32e9317ac05d5ce6988f959b5e7fdeb.jpg' },
+  { id: 6807, name: 'SQUARE JAQUARD COLLAR CARDIGAN', color: 'SEPIA BEIGE', price: 495000, currency: 'KRW', category: 'previous', imageUrl: 'https://recto.co/web/product/medium/202509/a8ba4269085c9abbd27b1e0abdf4e5d7.jpg' },
 ];
 
 // ─── 아이웨어 상품 데이터 ───

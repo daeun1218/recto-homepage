@@ -41,6 +41,9 @@ const categoryMap = {
     bags: menProducts.filter((p) => p.category === 'singular-bag' || p.category === 'bucket-bag'),
     'singular-bag': menProducts.filter((p) => p.category === 'singular-bag'),
     'bucket-bag': menProducts.filter((p) => p.category === 'bucket-bag'),
+    shoes: menProducts.filter((p) => p.category === 'shoes'),
+    accessories: menProducts.filter((p) => p.category === 'accessories'),
+    previous: menProducts.filter((p) => p.category === 'previous'),
   },
 };
 
@@ -60,6 +63,7 @@ const categoryLabels = {
   'bucket-bag': '21 LEATHER BUCKET BAG',
   shoes: 'SHOES',
   accessories: 'ACCESSORIES',
+  previous: 'PREVIOUS SEASON',
 };
 
 const sideCategories = {
@@ -88,6 +92,9 @@ const sideCategories = {
     { group: 'ACCESSORIES', items: [
       { key: 'accessories', label: 'ALL' },
     ]},
+    { group: 'PREVIOUS SEASON', items: [
+      { key: 'previous', label: 'ALL' },
+    ]},
   ],
   men: [
     { group: 'READY TO WEAR', items: [
@@ -111,6 +118,9 @@ const sideCategories = {
     ]},
     { group: 'ACCESSORIES', items: [
       { key: 'accessories', label: 'ALL' },
+    ]},
+    { group: 'PREVIOUS SEASON', items: [
+      { key: 'previous', label: 'ALL' },
     ]},
   ],
 };
