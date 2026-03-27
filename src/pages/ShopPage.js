@@ -64,28 +64,54 @@ const categoryLabels = {
 
 const sideCategories = {
   women: [
-    { key: null, label: 'ALL' },
-    { key: 'outerwear', label: 'OUTERWEAR' },
-    { key: 'jackets', label: 'JACKETS' },
-    { key: 'tops', label: 'TOPS & T-SHIRTS' },
-    { key: 'shirts', label: 'SHIRTS & BLOUSES' },
-    { key: 'knitwear', label: 'KNITWEAR' },
-    { key: 'dresses', label: 'DRESSES' },
-    { key: 'skirts', label: 'SKIRTS' },
-    { key: 'pants', label: 'PANTS' },
-    { key: 'signature-leather', label: 'SIGNATURE LEATHER' },
-    { key: 'essential', label: 'ESSENTIAL' },
+    { group: 'READY TO WEAR', items: [
+      { key: 'outerwear', label: 'OUTERWEAR' },
+      { key: 'jackets', label: 'JACKETS' },
+      { key: 'tops', label: 'TOPS & T-SHIRTS' },
+      { key: 'shirts', label: 'SHIRTS & BLOUSES' },
+      { key: 'knitwear', label: 'KNITWEAR' },
+      { key: 'dresses', label: 'DRESSES' },
+      { key: 'skirts', label: 'SKIRTS' },
+      { key: 'pants', label: 'PANTS' },
+      { key: 'signature-leather', label: 'SIGNATURE LEATHER' },
+      { key: 'essential', label: 'ESSENTIAL' },
+      { key: null, label: 'ALL' },
+    ]},
+    { group: 'BAG', items: [
+      { key: 'singular-bag', label: 'SINGULAR BAG' },
+      { key: 'bucket-bag', label: '21 LEATHER BUCKET BAG' },
+      { key: 'bags', label: 'ALL' },
+    ]},
+    { group: 'SHOES', items: [
+      { key: 'shoes', label: 'ALL' },
+    ]},
+    { group: 'ACCESSORIES', items: [
+      { key: 'accessories', label: 'ALL' },
+    ]},
   ],
   men: [
-    { key: null, label: 'ALL' },
-    { key: 'outerwear', label: 'OUTERWEAR' },
-    { key: 'jackets', label: 'JACKETS' },
-    { key: 'tops', label: 'TOPS & T-SHIRTS' },
-    { key: 'shirts', label: 'SHIRTS' },
-    { key: 'knitwear', label: 'KNITWEAR' },
-    { key: 'pants', label: 'PANTS' },
-    { key: 'signature-leather', label: 'SIGNATURE LEATHER' },
-    { key: 'essential', label: 'ESSENTIAL' },
+    { group: 'READY TO WEAR', items: [
+      { key: 'outerwear', label: 'OUTERWEAR' },
+      { key: 'jackets', label: 'JACKETS' },
+      { key: 'tops', label: 'TOPS & T-SHIRTS' },
+      { key: 'shirts', label: 'SHIRTS' },
+      { key: 'knitwear', label: 'KNITWEAR' },
+      { key: 'pants', label: 'PANTS' },
+      { key: 'signature-leather', label: 'SIGNATURE LEATHER' },
+      { key: 'essential', label: 'ESSENTIAL' },
+      { key: null, label: 'ALL' },
+    ]},
+    { group: 'BAG', items: [
+      { key: 'singular-bag', label: 'SINGULAR BAG' },
+      { key: 'bucket-bag', label: '21 LEATHER BUCKET BAG' },
+      { key: 'bags', label: 'ALL' },
+    ]},
+    { group: 'SHOES', items: [
+      { key: 'shoes', label: 'ALL' },
+    ]},
+    { group: 'ACCESSORIES', items: [
+      { key: 'accessories', label: 'ALL' },
+    ]},
   ],
 };
 
@@ -115,20 +141,25 @@ export default function ShopPage() {
         {/* Sidebar */}
         <aside className={styles.sidebar}>
           <h2 className={styles.sidebarTitle}>{pageTitle}</h2>
-          <ul className={styles.sidebarList}>
-            {sidebar.map((item) => (
-              <li key={item.label}>
-                <Link
-                  to={item.key ? `/shop/${gender}?category=${item.key}` : `/shop/${gender}`}
-                  className={`${styles.sidebarLink} ${
-                    (item.key === category || (!item.key && !category)) ? styles.sidebarLinkActive : ''
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {sidebar.map((section) => (
+            <div key={section.group} className={styles.sidebarGroup}>
+              <span className={styles.sidebarGroupTitle}>{section.group}</span>
+              <ul className={styles.sidebarList}>
+                {section.items.map((item) => (
+                  <li key={item.label + item.key}>
+                    <Link
+                      to={item.key ? `/shop/${gender}?category=${item.key}` : `/shop/${gender}`}
+                      className={`${styles.sidebarLink} ${
+                        (item.key === category || (!item.key && !category && section.group === 'READY TO WEAR')) ? styles.sidebarLinkActive : ''
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </aside>
 
         {/* Product Grid */}

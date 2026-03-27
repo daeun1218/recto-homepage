@@ -30,13 +30,27 @@
   margin: 0 0 24px;
 }
 
+.sidebarGroup {
+  margin-bottom: 28px;
+}
+
+.sidebarGroupTitle {
+  display: block;
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #111;
+  margin-bottom: 14px;
+}
+
 .sidebarList {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 .sidebarLink {
