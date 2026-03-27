@@ -38,6 +38,9 @@ const categoryMap = {
     pants: menProducts.filter((p) => p.category === 'pants'),
     'signature-leather': signatureLeatherProducts,
     essential: essentialProducts,
+    bags: menProducts.filter((p) => p.category === 'singular-bag' || p.category === 'bucket-bag'),
+    'singular-bag': menProducts.filter((p) => p.category === 'singular-bag'),
+    'bucket-bag': menProducts.filter((p) => p.category === 'bucket-bag'),
   },
 };
 
