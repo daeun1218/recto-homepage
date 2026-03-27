@@ -162,7 +162,14 @@ function Header() {
           </svg>
         </button>
 
-        <Link to="/" className={styles.logo}>
+        <Link
+          to="/"
+          className={styles.logo}
+          onClick={() => {
+            window.scrollTo({ top: 0 });
+            document.querySelector('[class*="wrapper"]')?.scrollTo({ top: 0 });
+          }}
+        >
           <img src={logo} alt="RECTO" className={styles.logoImg} />
         </Link>
 
