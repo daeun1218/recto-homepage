@@ -1076,7 +1076,7 @@ export const eyewearProducts = [
 
 // ─── 홈 THE EDIT 대표 상품 (3개씩) ───
 export const homeWomenProducts = womenProducts.filter((p) => [7179, 6934, 7014].includes(p.id));
-export const homeMenProducts = menProducts;
+export const homeMenProducts = menProducts.filter((p) => [7203, 7079, 7229].includes(p.id));
 
 // ─── SIGNATURE LEATHER 카테고리 (cate_no=317) ───
 export const signatureLeatherProducts = [
