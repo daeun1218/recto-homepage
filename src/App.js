@@ -13,6 +13,7 @@ import CartPage from './pages/CartPage';
 import ShopPage from './pages/ShopPage';
 import CollabPage from './pages/CollabPage';
 import MyPage from './pages/MyPage';
+import AboutPage from './pages/AboutPage';
 import { banners, homeWomenProducts, homeMenProducts } from './data/mockData';
 
 function HomePage() {
@@ -108,6 +109,7 @@ function App() {
       <Route path="/shop/:gender" element={<ShopPage />} />
       <Route path="/collab/effector" element={<CollabPage />} />
       <Route path="/mypage" element={<MyPage />} />
+      <Route path="/about" element={<AboutPage />} />
       <Route path="/cart" element={<CartPage />} />
       </Routes>
     </CartProvider>

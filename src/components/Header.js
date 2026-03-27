@@ -8,16 +8,12 @@ const megaMenuData = {
   about: {
     ABOUT: [
       { name: 'ABOUT THE BRAND', link: '/about' },
-      { name: 'STORES', link: '/stores' },
     ],
   },
   collections: {
     COLLECTIONS: [
       { name: 'WOMEN SPRING SUMMER 2026', link: '/collection/women' },
       { name: 'MEN SPRING SUMMER 2026', link: '/collection/men' },
-    ],
-    CAMPAIGNS: [
-      { name: 'SPRING SUMMER 2026', link: '/campaign/ss26' },
     ],
   },
   women: {
