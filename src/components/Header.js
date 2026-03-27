@@ -232,7 +232,7 @@ function Header() {
             </Link>
           </li>
           <li>
-            <a href="#!" className={styles.navLink}>MY PAGE</a>
+            <Link to="/mypage" className={styles.navLink}>MY PAGE</Link>
           </li>
         </ul>
 
@@ -349,7 +349,7 @@ function Header() {
           <Link to="/cart" className={styles.drawerFooterLink} onClick={closeMenu}>
             CART{cartCount > 0 && ` (${cartCount})`}
           </Link>
-          <a href="#!" className={styles.drawerFooterLink}>MY PAGE</a>
+          <Link to="/mypage" className={styles.drawerFooterLink} onClick={closeMenu}>MY PAGE</Link>
         </div>
       </div>
     </header>
