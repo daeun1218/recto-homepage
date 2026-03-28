@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
+import { WishlistProvider } from './context/WishlistContext';
 import Header from './components/Header';
 import SplitBanner from './components/SplitBanner';
 import TheEditSection from './components/TheEditSection';
@@ -102,6 +103,7 @@ function HomePage() {
 function App() {
   return (
     <CartProvider>
+    <WishlistProvider>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/collection/:id" element={<CollectionPage />} />
@@ -112,6 +114,7 @@ function App() {
       <Route path="/about" element={<AboutPage />} />
       <Route path="/cart" element={<CartPage />} />
       </Routes>
+    </WishlistProvider>
     </CartProvider>
   );
 }

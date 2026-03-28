@@ -2,10 +2,13 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
 import styles from './CartPage.module.css';
 
 export default function CartPage() {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
+  const { wishlistItems, removeFromWishlist } = useWishlist();
+  const [activeTab, setActiveTab] = useState('delivery');
   const [checkedIds, setCheckedIds] = useState(() => cartItems.map((_, i) => i));
 
   const toggleCheck = (idx) => {
@@ -41,10 +44,50 @@ export default function CartPage() {
 
         {/* Tabs */}
         <div className={styles.tabs}>
-          <span className={styles.tabActive}>배송상품 ({cartItems.length})</span>
+          <button
+            className={activeTab === 'delivery' ? styles.tabActive : styles.tab}
+            onClick={() => setActiveTab('delivery')}
+          >
+            배송상품 ({cartItems.length})
+          </button>
+          <span className={styles.tabDivider}>|</span>
+          <button
+            className={activeTab === 'wishlist' ? styles.tabActive : styles.tab}
+            onClick={() => setActiveTab('wishlist')}
+          >
+            위시리스트 ({wishlistItems.length})
+          </button>
         </div>
 
-        {cartItems.length === 0 ? (
+        {activeTab === 'wishlist' ? (
+          wishlistItems.length === 0 ? (
+            <div className={styles.empty}>
+              <p>위시리스트가 비어있습니다.</p>
+              <Link to="/" className={styles.emptyLink}>쇼핑 계속하기</Link>
+            </div>
+          ) : (
+            <div className={styles.wishlistList}>
+              {wishlistItems.map((item, idx) => (
+                <div key={idx} className={styles.wishlistItem}>
+                  <div className={styles.itemImg}>
+                    <img src={item.image} alt={item.name} />
+                  </div>
+                  <div className={styles.itemInfo}>
+                    <p className={styles.itemName}>{item.name}</p>
+                    <p className={styles.itemPrice}>{item.price.toLocaleString()}원</p>
+                    <p className={styles.wishlistOption}>[옵션: {item.size}]</p>
+                  </div>
+                  <button className={styles.removeBtn} onClick={() => removeFromWishlist(idx)} aria-label="삭제">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <line x1="2" y1="2" x2="14" y2="14" stroke="#999" strokeWidth="1" />
+                      <line x1="14" y1="2" x2="2" y2="14" stroke="#999" strokeWidth="1" />
+                    </svg>
+                  </button>
+                </div>
+              ))}
+            </div>
+          )
+        ) : cartItems.length === 0 ? (
           <div className={styles.empty}>
             <p>장바구니가 비어있습니다.</p>
             <Link to="/" className={styles.emptyLink}>쇼핑 계속하기</Link>

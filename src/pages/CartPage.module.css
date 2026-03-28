@@ -32,6 +32,11 @@
   font-size: 13px;
   font-weight: 600;
   color: #111;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .tabDivider {
@@ -42,6 +47,11 @@
 .tab {
   font-size: 13px;
   color: #aaa;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 /* ── Empty ── */
@@ -469,6 +479,26 @@
   color: #999;
   margin-right: 4px;
   vertical-align: middle;
+}
+
+/* ── Wishlist ── */
+.wishlistList {
+  display: flex;
+  flex-direction: column;
+}
+
+.wishlistItem {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.wishlistOption {
+  font-size: 12px;
+  color: #888;
+  margin: 4px 0 0;
 }
 
 /* ── Mobile ── */

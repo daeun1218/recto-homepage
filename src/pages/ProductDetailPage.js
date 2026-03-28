@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import CartPopup from '../components/CartPopup';
+import WishlistPopup from '../components/WishlistPopup';
 import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
 import { allProducts, womenProducts, menProducts } from '../data/mockData';
 import productImages from '../data/productImages';
 import productDetails from '../data/productDetails';
@@ -18,8 +20,10 @@ export default function ProductDetailPage() {
   const [quantity, setQuantity] = useState(0);
   const [openAccordion, setOpenAccordion] = useState(null);
   const [cartItem, setCartItem] = useState(null);
+  const [wishItem, setWishItem] = useState(null);
   const [sizeWarning, setSizeWarning] = useState(false);
   const { addToCart } = useCart();
+  const { addToWishlist } = useWishlist();
 
   // 상품 변경 시 상태 초기화 & 스크롤 맨 위로
   useEffect(() => {
@@ -178,7 +182,21 @@ export default function ProductDetailPage() {
                   setCartItem(item);
                 }}
               >CART</button>
-              <button className={styles.wishBtn}>WISH LIST</button>
+              <button
+                className={styles.wishBtn}
+                onClick={() => {
+                  if (requireSize()) return;
+                  const item = {
+                    name: `${product.name} - ${product.color}`,
+                    size: selectedSize === 'OS' ? 'F' : selectedSize,
+                    quantity: Math.max(quantity, 1),
+                    price: product.price * Math.max(quantity, 1),
+                    image: images[0],
+                  };
+                  addToWishlist(item);
+                  setWishItem(item);
+                }}
+              >WISH LIST</button>
             </div>
 
             {/* ── 아코디언 ── */}
@@ -272,6 +290,7 @@ export default function ProductDetailPage() {
         </div>
       </div>
       <CartPopup item={cartItem} onClose={() => setCartItem(null)} />
+      <WishlistPopup item={wishItem} onClose={() => setWishItem(null)} />
     </div>
   );
 }
