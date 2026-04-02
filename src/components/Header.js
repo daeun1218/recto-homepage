@@ -341,6 +341,7 @@ function Header() {
         </div>
 
         <div className={styles.drawerFooter}>
+          <Link to="/about" className={styles.drawerFooterLink} onClick={closeMenu}>ABOUT</Link>
           <a href="#!" className={styles.drawerFooterLink}>SEARCH</a>
           <Link to="/cart" className={styles.drawerFooterLink} onClick={closeMenu}>
             CART{cartCount > 0 && ` (${cartCount})`}
